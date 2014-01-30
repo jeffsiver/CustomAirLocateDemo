@@ -196,8 +196,8 @@
     CLBeacon *beacon = self.beacons[sectionKey][indexPath.row];
     cell.textLabel.text = [beacon.proximityUUID UUIDString];
 
-    NSString *formatString = NSLocalizedString(@"RSSI: %d, Acc: %.2fm", @"Format string for ranging table cells.");
-    cell.detailTextLabel.text = [NSString stringWithFormat:formatString, beacon.rssi, beacon.accuracy];
+    NSString *formatString = NSLocalizedString(@"RSSI: %d, Acc: %.2fm, Major: %@, Minor: %@", @"Format string for ranging table cells.");
+    cell.detailTextLabel.text = [NSString stringWithFormat:formatString, beacon.rssi, beacon.accuracy, beacon.major, beacon.minor];
 	
     return cell;
 }
